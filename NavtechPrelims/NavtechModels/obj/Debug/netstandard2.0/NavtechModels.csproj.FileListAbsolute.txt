@@ -1,0 +1,9 @@
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechModels\bin\Debug\netstandard2.0\NavtechModels.deps.json
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechModels\bin\Debug\netstandard2.0\NavtechModels.dll
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechModels\bin\Debug\netstandard2.0\NavtechModels.pdb
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechModels\obj\Debug\netstandard2.0\NavtechModels.csprojAssemblyReference.cache
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechModels\obj\Debug\netstandard2.0\NavtechModels.AssemblyInfoInputs.cache
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechModels\obj\Debug\netstandard2.0\NavtechModels.AssemblyInfo.cs
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechModels\obj\Debug\netstandard2.0\NavtechModels.csproj.CoreCompileInputs.cache
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechModels\obj\Debug\netstandard2.0\NavtechModels.dll
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechModels\obj\Debug\netstandard2.0\NavtechModels.pdb

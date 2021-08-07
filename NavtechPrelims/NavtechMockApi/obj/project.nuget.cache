@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "1d7mIx0fJ/wHVy6Tte/3KYVrS/3ubQZ+QGBCIEZ+VqkicJ2gnQRyJQCPBJDARAsQVeybheIOaSKHeXf1C730Dg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\chauh\\Source\\Repos\\Navtech\\NavtechPrelims\\NavtechMockApi\\NavtechMockApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\chauh\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "wAWMH1Qz+E04G62XsStX7m3SWZxmwJ/OBT9sMZgir0RHqetSxOggZOjNfAEpKjLx2CgEfD9+EN2c3kY9aCaVAQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\chauh\\Source\\Repos\\Navtech\\NavtechPrelims\\NavtechModels\\NavtechModels.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\chauh\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\chauh\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

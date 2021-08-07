@@ -1,0 +1,12 @@
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechDAL\bin\Debug\netstandard2.0\NavtechRepository.deps.json
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechDAL\bin\Debug\netstandard2.0\NavtechRepository.dll
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechDAL\bin\Debug\netstandard2.0\NavtechRepository.pdb
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechDAL\bin\Debug\netstandard2.0\NavtechModels.dll
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechDAL\bin\Debug\netstandard2.0\NavtechModels.pdb
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechDAL\obj\Debug\netstandard2.0\NavtechRepository.csprojAssemblyReference.cache
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechDAL\obj\Debug\netstandard2.0\NavtechRepository.AssemblyInfoInputs.cache
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechDAL\obj\Debug\netstandard2.0\NavtechRepository.AssemblyInfo.cs
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechDAL\obj\Debug\netstandard2.0\NavtechRepository.csproj.CopyComplete
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechDAL\obj\Debug\netstandard2.0\NavtechRepository.dll
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechDAL\obj\Debug\netstandard2.0\NavtechRepository.pdb
+C:\Users\chauh\Source\Repos\Navtech\NavtechPrelims\NavtechDAL\obj\Debug\netstandard2.0\NavtechRepository.csproj.CoreCompileInputs.cache
