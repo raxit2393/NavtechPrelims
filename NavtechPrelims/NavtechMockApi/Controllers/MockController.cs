@@ -25,7 +25,7 @@ namespace NavtechMockApi.Controllers
             try
             {
                 List<Fields> lstFields = new List<Fields>();
-                for (int i = 1; i < 5; i++)
+                for (int i = 1; i <= 5; i++)
                 {
                     lstFields.Add(new Fields { FieldName = "Field" + i, EndPointUrl = "Source1" });
                 }
@@ -53,7 +53,7 @@ namespace NavtechMockApi.Controllers
             try
             {
                 List<Fields> lstFields = new List<Fields>();
-                for (int i = 1; i < 5; i++)
+                for (int i = 1; i <= 5; i++)
                 {
                     lstFields.Add(new Fields { FieldName = "CField" + i, EndPointUrl = "Source2" });
                 }

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ayWgiY0H+7Gac0x9dj/nGFfgYrJFAsQ4yUmQsIXlAuctYdnCyd/CfkyPKJ7GNhs9WV4Pw9i8nEP9UUwy6iRCWg==",
+  "dgSpecHash": "vAUhmoxFgsPhz7AmMCK/6NXz/oNp/idiVvWVNvI6vmCQTcZEd/otmob+tkXDhZ1ARH+5gH6cFY0sfSLtiu0GIA==",
   "success": true,
   "projectFilePath": "D:\\Repository\\NavtechPrelims\\NavtechMockApi\\NavtechMockApi.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\chauh\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\chauh\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\chauh\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

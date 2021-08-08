@@ -23,20 +23,8 @@ namespace NavtechPrelims
             services.AddControllers();
             // inject counter and rules stores
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            
+
             services.AddSingleton<IEntityRepository, EntityRepository>();
-
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1", new Info { Title = "NavtechPrelimsApi", Version = "v1", Description = "" });
-
-            //    c.OperationFilter<SwaggerHeaderFilter>();
-
-            //    var xmlFile = $"swagger.XML";
-            //    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-            //    c.IncludeXmlComments(xmlPath);
-            //});
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

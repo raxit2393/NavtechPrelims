@@ -5,7 +5,6 @@ SET QUOTED_IDENTIFIER ON
 GO  
 ALTER PROCEDURE [dbo].[sp_db_entity_configuration]  
 @Operation VARCHAR(20)=NULL,  
- @EntityName VARCHAR(200) = NULL,  
  
  @XMLConfig XML='' 
  
@@ -15,33 +14,35 @@ BEGIN
   
 	IF UPPER(@Operation)='SELECT-CONIFG'  
 	BEGIN  
-		SELECT EntityName, FieldName, IsRequired, [MaxLength], EndPointUrl FROM EntityConfiguration where IsActive = 1;
+		SELECT EntityName, FieldName, ISNULL(IsRequired, 0) AS IsRequired, [MaxLength], EndPointUrl FROM EntityConfiguration where IsActive = 1;
 	END
   
 	ELSE IF UPPER(@Operation)='SAVE-CONIFG'  
 	BEGIN
 	BEGIN TRANSACTION [ConfigurationTran]      
 	BEGIN TRY
-		DECLARE @EntityConfig TABLE (EntityName VARCHAR(200) NOT NULL, FieldName VARCHAR(200) NOT NULL, IsRequired BIT NULL, [MaxLength] BIGINT NULL);
+		DECLARE @EntityConfig TABLE (EntityName VARCHAR(200) NOT NULL, FieldName VARCHAR(200) NOT NULL, IsRequired BIT NULL, [MaxLength] BIGINT NULL, EndPointUrl VARCHAR(2000) NULL);
 
-		INSERT INTO @EntityConfig (EntityName, FieldName, IsRequired, [MaxLength])
+		INSERT INTO @EntityConfig (EntityName, FieldName, EndPointUrl, IsRequired, [MaxLength])
 			(SELECT x.y.value('(EntityName/text())[1]','VARCHAR(200)') AS EntityName,      
 				x.y.value('(FieldName/text())[1]','VARCHAR(200)') AS FieldName,      
+				x.y.value('(EndPointUrl/text())[1]','VARCHAR(2000)') AS EndPointUrl,      
 				x.y.value('(IsRequired/text())[1]','BIT') AS IsRequired,
-			  x.y.value('(MaxLength/text())[1]','BIGINT') AS MaxLength
+			  x.y.value('(MaxLength/text())[1]','BIGINT') AS [MaxLength]
 			  FROM @XMLConfig.nodes('/Fields/Field') AS x (y));
 		
 		MERGE EntityConfiguration t
 		USING @EntityConfig s
-		ON t.EntityName = s.EntityName AND t.FieldName = s.FieldName
+		ON t.EntityName = s.EntityName AND t.FieldName = s.FieldName AND ISNULL(t.EndPointUrl, '') = ISNULL(s.EndPointUrl, '')
 		WHEN MATCHED      
 		THEN UPDATE SET       
 			t.IsRequired = s.IsRequired,      
-			t.[MaxLength] = s.[MaxLength],      		
-			t.UpdatedDate=GETDATE()	
+			t.[MaxLength] = s.[MaxLength], 
+			t.EndPointUrl = s.EndPointUrl,
+			t.UpdatedDate = GETDATE()	
 		WHEN NOT MATCHED BY TARGET THEN 
-			INSERT (EntityName, FieldName, IsRequired, [MaxLength])   
-				VALUES(s.EntityName, s.FieldName, s.IsRequired, s.[MaxLength]);
+			INSERT (EntityName, FieldName, IsRequired, [MaxLength], EndPointUrl)   
+				VALUES(s.EntityName, s.FieldName, s.IsRequired, s.[MaxLength], s.EndPointUrl);
 
 	COMMIT TRANSACTION [ConfigurationTran]      
 	END TRY      

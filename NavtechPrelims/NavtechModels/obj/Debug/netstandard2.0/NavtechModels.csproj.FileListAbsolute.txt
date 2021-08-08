@@ -13,6 +13,6 @@ D:\Repository\NavtechPrelims\NavtechModels\bin\Debug\netstandard2.0\NavtechModel
 D:\Repository\NavtechPrelims\NavtechModels\obj\Debug\netstandard2.0\NavtechModels.csprojAssemblyReference.cache
 D:\Repository\NavtechPrelims\NavtechModels\obj\Debug\netstandard2.0\NavtechModels.AssemblyInfoInputs.cache
 D:\Repository\NavtechPrelims\NavtechModels\obj\Debug\netstandard2.0\NavtechModels.AssemblyInfo.cs
-D:\Repository\NavtechPrelims\NavtechModels\obj\Debug\netstandard2.0\NavtechModels.csproj.CoreCompileInputs.cache
 D:\Repository\NavtechPrelims\NavtechModels\obj\Debug\netstandard2.0\NavtechModels.dll
 D:\Repository\NavtechPrelims\NavtechModels\obj\Debug\netstandard2.0\NavtechModels.pdb
+D:\Repository\NavtechPrelims\NavtechModels\obj\Debug\netstandard2.0\NavtechModels.csproj.CoreCompileInputs.cache

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "6ayKZApsHhgvZdLNg0Tnri7LGJUs+CIybzbQUgWTaVLhAxDwgCspGk3xqLu6OKx4BnhlvfIi6KueWJiMnSA0fg==",
+  "dgSpecHash": "UaTv7lYzWN8oarCxCgwzq8qnaMQZ8z6yzZRNZWBpEyGJyLOED63cTzNNKu6FcJaDIGzjt9tJ0sWj9tCppdX2Tg==",
   "success": true,
   "projectFilePath": "D:\\Repository\\NavtechPrelims\\NavtechModels\\NavtechModels.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chauh\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\chauh\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\chauh\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\chauh\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

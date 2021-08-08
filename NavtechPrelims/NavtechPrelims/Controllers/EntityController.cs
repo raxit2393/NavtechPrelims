@@ -80,7 +80,7 @@ namespace NavtechPrelims.Controllers
                 lstConfigurations = GetContextResponse(lstDbCongigurations, isAlternateApproach ? new List<SourceResponseModel>() : lstResponse);
 
                 objResultResponse.ResponseCode = HttpStatusCode.OK.ToString();
-                objResultResponse.Message = "Configuration fetched successfully.";
+                objResultResponse.Message = "Configurations fetched successfully.";
                 objResultResponse.Data = lstConfigurations;
             }
             catch (Exception ex)
@@ -111,7 +111,7 @@ namespace NavtechPrelims.Controllers
                 if (objResponse != null)
                 {
                     objResultResponse.ResponseCode = HttpStatusCode.OK.ToString();
-                    objResultResponse.Message = "Configuration saved successfully.";
+                    objResultResponse.Message = "Configurations saved successfully.";
                     objResultResponse.Data = objResponse;
                 }
             }

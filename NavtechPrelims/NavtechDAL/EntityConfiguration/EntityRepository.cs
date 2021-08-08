@@ -19,7 +19,6 @@ namespace NavtechRepository.Entity
         /// <returns></returns>
         public List<EntityConfigurationModel> GetEntityConfiguration()
         {
-            //var resultData = new Dictionary<string, object>();
             List<EntityConfigurationModel> _lstObj = new List<EntityConfigurationModel>();
             try
             {
