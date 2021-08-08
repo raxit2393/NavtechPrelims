@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace NavtechModels.Models
 {
     public class SourceResponseModel
     {
+        /// <summary>
+        /// Payload response body
+        /// </summary>
         public SourceResponseModel()
         {
             Fields = new List<Fields>();
@@ -14,9 +15,14 @@ namespace NavtechModels.Models
         public List<Fields> Fields { get; set; }
     }
 
+    /// <summary>
+    /// Class to get and set the fields
+    /// </summary>
     public class Fields
     {
         public string FieldName { get; set; }
+        public string EndPointUrl { get; set; }
+
     }
 
 }

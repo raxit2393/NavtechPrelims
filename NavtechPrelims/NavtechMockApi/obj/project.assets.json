@@ -69,11 +69,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chauh\\Source\\Repos\\Navtech\\NavtechPrelims\\NavtechMockApi\\NavtechMockApi.csproj",
+      "projectUniqueName": "D:\\Repository\\NavtechPrelims\\NavtechMockApi\\NavtechMockApi.csproj",
       "projectName": "NavtechMockApi",
-      "projectPath": "C:\\Users\\chauh\\Source\\Repos\\Navtech\\NavtechPrelims\\NavtechMockApi\\NavtechMockApi.csproj",
+      "projectPath": "D:\\Repository\\NavtechPrelims\\NavtechMockApi\\NavtechMockApi.csproj",
       "packagesPath": "C:\\Users\\chauh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chauh\\Source\\Repos\\Navtech\\NavtechPrelims\\NavtechMockApi\\obj\\",
+      "outputPath": "D:\\Repository\\NavtechPrelims\\NavtechMockApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\chauh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,8 +89,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\chauh\\Source\\Repos\\Navtech\\NavtechPrelims\\NavtechModels\\NavtechModels.csproj": {
-              "projectPath": "C:\\Users\\chauh\\Source\\Repos\\Navtech\\NavtechPrelims\\NavtechModels\\NavtechModels.csproj"
+            "D:\\Repository\\NavtechPrelims\\NavtechModels\\NavtechModels.csproj": {
+              "projectPath": "D:\\Repository\\NavtechPrelims\\NavtechModels\\NavtechModels.csproj"
             }
           }
         }

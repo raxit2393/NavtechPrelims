@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace NavtechModels
 {
+    /// <summary>
+    /// Entity config DB model
+    /// </summary>
     public class EntityConfigurationModel : EntityConfigurationResponseModel
     {
         public string EntityName { get; set; }
@@ -11,6 +14,9 @@ namespace NavtechModels
         public DateTime? UpdatedDate { get; set; }
     }
 
+    /// <summary>
+    /// Response partial modal, to be inherited
+    /// </summary>
     public class EntityConfigurationResponseModel
     {
         public string FieldName { get; set; }
@@ -19,18 +25,11 @@ namespace NavtechModels
         public string EndPointUrl { get; set; }
     }
 
+    /// <summary>
+    /// Response and Request model
+    /// </summary>
     public class EntityConfigurationRequestModel
     {
-        public string EntityName { get; set; }
-        public List<EntityConfigurationResponseModel> Fields { get; set; }
-    }
-
-    public class ResponseBodyModel
-    {
-        public ResponseBodyModel()
-        {
-            Fields = new List<EntityConfigurationResponseModel>();
-        }
         public string EntityName { get; set; }
         public List<EntityConfigurationResponseModel> Fields { get; set; }
     }

@@ -19,10 +19,6 @@ namespace NavtechPrelims.Controllers
 
         #region Property
         private readonly IEntityRepository _entityRepository;
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
         #endregion
 
         #region Constructor
@@ -36,87 +32,41 @@ namespace NavtechPrelims.Controllers
         }
         #endregion
 
-        #region GET
-
-        [HttpGet]
-        [Route("get-weather")]
-        public IEnumerable<WeatherForecast> Get()
-        {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
-        }
-
-        ////GetEntity
-        //[HttpGet]
-        //[Route("get-entity-configuration")]
-        //public object GetEntity()
-        //{
-        //    ResultResponse objResultResponse = new ResultResponse();
-
-        //    try
-        //    {
-        //        var lstConfigurations = _entityRepository.GetEntityConfiguration();
-        //        objResultResponse.ResponseCode = HttpStatusCode.OK.ToString();
-        //        objResultResponse.Message = "Configuration fetched successfully.";
-        //        objResultResponse.Data = lstConfigurations;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        objResultResponse.ResponseCode = HttpStatusCode.BadRequest.ToString();
-        //        objResultResponse.Message = ex.Message;
-        //        objResultResponse.Data = null;
-        //    }
-        //    return objResultResponse;
-        //}
-
+        #region GET       
         /// <summary>
         /// Get Mock data adn return final entity
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        //[Route("get-entity-configuration-url")]
-        public object GetEntityFromURL()
+        public object GetEntityConfiguration(bool isAlternateApproach)
         {
             ResultResponse objResultResponse = new ResultResponse();
             try
             {
-                var responseStringSource1 = string.Empty;
-                var responseStringSource2 = string.Empty;
-                //Get response from different sources
-                try
-                {
-                    string Source1 = "https://localhost:44371/api/Mock/DefaultFields/Product";
-                    responseStringSource1 = ApiCall.GetApi(Source1);
-                }
-                catch { }
+                //Get configuration form various sources
+                List<SourceResponseModel> lstResponse = GetConfigurationsFromSouurce();
 
-                try
+                //If alternate approach then save the source config to db and then fetch
+                if (isAlternateApproach)
                 {
-                    string Source2 = "https://localhost:44371/api/Mock/CustomFields/ent";
-                    responseStringSource2 = ApiCall.GetApi(Source2);
-                }
-                catch { }
+                    List<EntityConfigurationRequestModel> objEntityConfigurationRequestModel = new List<EntityConfigurationRequestModel>();
 
-                //Deserialize the responses
-                var lstFieldsSource1 = JsonConvert.DeserializeObject<SourceResponseModel>(responseStringSource1);
-                var lstFieldsSource2 = JsonConvert.DeserializeObject<SourceResponseModel>(responseStringSource2);
+                    objEntityConfigurationRequestModel = lstResponse.Select(z => new EntityConfigurationRequestModel
+                    {
+                        EntityName = z.EntityName,
+                        Fields = z.Fields.Select(z => new EntityConfigurationResponseModel
+                        {
+                            FieldName = z.FieldName,
+                            EndPointUrl = z.EndPointUrl,
+                            IsRequired = false,
+                            MaxLength = 0
+                        }).ToList()
+                    }).ToList();
 
-                //Append responses
-                List<SourceResponseModel> lstResponse = new List<SourceResponseModel>();
-                if (lstFieldsSource1 != null)
-                {
-                    lstResponse.Add(lstFieldsSource1);
+                    var response = SaveEntityConfigurations(objEntityConfigurationRequestModel);
                 }
-                if (lstFieldsSource2 != null)
-                {
-                    lstResponse.Add(lstFieldsSource2);
-                }
+
+                //Get configurations from database
                 var lstDbCongigurations = new List<EntityConfigurationModel>();
                 try
                 {
@@ -124,8 +74,10 @@ namespace NavtechPrelims.Controllers
                 }
                 catch { }
 
-                List<ResponseBodyModel> lstConfigurations = new List<ResponseBodyModel>();
-                lstConfigurations = GetContextResponse(lstDbCongigurations, lstResponse);
+                List<EntityConfigurationRequestModel> lstConfigurations = new List<EntityConfigurationRequestModel>();
+
+                //If alternate approach then reset the source response 
+                lstConfigurations = GetContextResponse(lstDbCongigurations, isAlternateApproach ? new List<SourceResponseModel>() : lstResponse);
 
                 objResultResponse.ResponseCode = HttpStatusCode.OK.ToString();
                 objResultResponse.Message = "Configuration fetched successfully.";
@@ -144,13 +96,13 @@ namespace NavtechPrelims.Controllers
 
         #region POST
         /// <summary>
-        ///  Add/Update an SCOrder
+        ///  Insert/Update configurations
         /// </summary>
-        /// <param name="objSCorders"></param>
+        /// <param name="objEntityConfigurationRequestModel"></param>
         /// <returns></returns>
         [HttpPost]
         //[Route("save-entity-configuration")]
-        public object SaveSCOrders([FromBody] List<EntityConfigurationRequestModel> objEntityConfigurationRequestModel)
+        public object SaveEntityConfigurations([FromBody] List<EntityConfigurationRequestModel> objEntityConfigurationRequestModel)
         {
             ResultResponse objResultResponse = new ResultResponse();
             try
@@ -158,7 +110,6 @@ namespace NavtechPrelims.Controllers
                 var objResponse = _entityRepository.SaveEntityConfiguration(objEntityConfigurationRequestModel);
                 if (objResponse != null)
                 {
-
                     objResultResponse.ResponseCode = HttpStatusCode.OK.ToString();
                     objResultResponse.Message = "Configuration saved successfully.";
                     objResultResponse.Data = objResponse;
@@ -182,9 +133,9 @@ namespace NavtechPrelims.Controllers
         /// <param name="lstResponse"></param>
         /// <param name="objContextResponse"></param>
         /// <returns></returns>        
-        private List<ResponseBodyModel> GetContextResponse(List<EntityConfigurationModel> lstDbCongigurations, List<SourceResponseModel> lstResponse)
+        private List<EntityConfigurationRequestModel> GetContextResponse(List<EntityConfigurationModel> lstDbCongigurations, List<SourceResponseModel> lstResponse)
         {
-            List<ResponseBodyModel> ContextResponse = new List<ResponseBodyModel>();
+            List<EntityConfigurationRequestModel> ContextResponse = new List<EntityConfigurationRequestModel>();
 
             try
             {
@@ -229,7 +180,7 @@ namespace NavtechPrelims.Controllers
                            }).ToList());
                     }
 
-                    ContextResponse.Add(new ResponseBodyModel { EntityName = entity, Fields = lstFilteredFields });
+                    ContextResponse.Add(new EntityConfigurationRequestModel { EntityName = entity, Fields = lstFilteredFields });
                 }
             }
             catch (Exception)
@@ -241,6 +192,53 @@ namespace NavtechPrelims.Controllers
                 GC.Collect();
             }
             return ContextResponse;
+        }
+
+        /// <summary>
+        /// Fetch and merge response from differnet sources
+        /// </summary>
+        /// <returns></returns>
+        private List<SourceResponseModel> GetConfigurationsFromSouurce()
+        {
+            List<SourceResponseModel> lstResponse = new List<SourceResponseModel>();
+            try
+            {
+                var responseStringSource1 = string.Empty;
+                var responseStringSource2 = string.Empty;
+                //Get response from different sources
+                try
+                {
+                    string Source1 = "https://localhost:44371/api/Mock/DefaultFields/Product";
+                    responseStringSource1 = ApiCall.GetApi(Source1);
+                }
+                catch { }
+
+                try
+                {
+                    string Source2 = "https://localhost:44371/api/Mock/CustomFields/ent";
+                    responseStringSource2 = ApiCall.GetApi(Source2);
+                }
+                catch { }
+
+                //Deserialize the responses
+                var lstFieldsSource1 = JsonConvert.DeserializeObject<SourceResponseModel>(responseStringSource1);
+                var lstFieldsSource2 = JsonConvert.DeserializeObject<SourceResponseModel>(responseStringSource2);
+
+                //Append responses                
+                if (lstFieldsSource1 != null)
+                {
+                    lstResponse.Add(lstFieldsSource1);
+                }
+                if (lstFieldsSource2 != null)
+                {
+                    lstResponse.Add(lstFieldsSource2);
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            return lstResponse;
         }
         #endregion
     }

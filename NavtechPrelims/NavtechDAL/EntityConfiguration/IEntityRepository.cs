@@ -12,7 +12,7 @@ namespace NavtechRepository.Entity
         List<EntityConfigurationModel> GetEntityConfiguration();
 
         /// <summary>
-        /// 
+        /// Insert/Update configurations
         /// </summary>
         /// <param name="objEntityConfigurationRequestModel"></param>
         /// <returns></returns>

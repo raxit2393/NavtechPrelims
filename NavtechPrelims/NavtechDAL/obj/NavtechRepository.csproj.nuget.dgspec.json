@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chauh\\Source\\Repos\\Navtech\\NavtechPrelims\\NavtechDAL\\NavtechRepository.csproj": {}
+    "D:\\Repository\\NavtechPrelims\\NavtechDAL\\NavtechRepository.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chauh\\Source\\Repos\\Navtech\\NavtechPrelims\\NavtechDAL\\NavtechRepository.csproj": {
+    "D:\\Repository\\NavtechPrelims\\NavtechDAL\\NavtechRepository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chauh\\Source\\Repos\\Navtech\\NavtechPrelims\\NavtechDAL\\NavtechRepository.csproj",
+        "projectUniqueName": "D:\\Repository\\NavtechPrelims\\NavtechDAL\\NavtechRepository.csproj",
         "projectName": "NavtechRepository",
-        "projectPath": "C:\\Users\\chauh\\Source\\Repos\\Navtech\\NavtechPrelims\\NavtechDAL\\NavtechRepository.csproj",
+        "projectPath": "D:\\Repository\\NavtechPrelims\\NavtechDAL\\NavtechRepository.csproj",
         "packagesPath": "C:\\Users\\chauh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chauh\\Source\\Repos\\Navtech\\NavtechPrelims\\NavtechDAL\\obj\\",
+        "outputPath": "D:\\Repository\\NavtechPrelims\\NavtechDAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chauh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\chauh\\Source\\Repos\\Navtech\\NavtechPrelims\\NavtechModels\\NavtechModels.csproj": {
-                "projectPath": "C:\\Users\\chauh\\Source\\Repos\\Navtech\\NavtechPrelims\\NavtechModels\\NavtechModels.csproj"
+              "D:\\Repository\\NavtechPrelims\\NavtechModels\\NavtechModels.csproj": {
+                "projectPath": "D:\\Repository\\NavtechPrelims\\NavtechModels\\NavtechModels.csproj"
               }
             }
           }
@@ -71,14 +71,14 @@
         }
       }
     },
-    "C:\\Users\\chauh\\Source\\Repos\\Navtech\\NavtechPrelims\\NavtechModels\\NavtechModels.csproj": {
+    "D:\\Repository\\NavtechPrelims\\NavtechModels\\NavtechModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chauh\\Source\\Repos\\Navtech\\NavtechPrelims\\NavtechModels\\NavtechModels.csproj",
+        "projectUniqueName": "D:\\Repository\\NavtechPrelims\\NavtechModels\\NavtechModels.csproj",
         "projectName": "NavtechModels",
-        "projectPath": "C:\\Users\\chauh\\Source\\Repos\\Navtech\\NavtechPrelims\\NavtechModels\\NavtechModels.csproj",
+        "projectPath": "D:\\Repository\\NavtechPrelims\\NavtechModels\\NavtechModels.csproj",
         "packagesPath": "C:\\Users\\chauh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chauh\\Source\\Repos\\Navtech\\NavtechPrelims\\NavtechModels\\obj\\",
+        "outputPath": "D:\\Repository\\NavtechPrelims\\NavtechModels\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chauh\\AppData\\Roaming\\NuGet\\NuGet.Config",
