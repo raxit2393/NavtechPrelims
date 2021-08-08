@@ -35,5 +35,5 @@ otherwise insert.
 - Stored Procedure: NavtechPrelims\DBComponents\dbo\StoredProcedures\sp_db_entity_configuration
 - 
 ## Connection String
-Connection string is available in the here,
+Connection string is available at the following loaction,
 \NavtechPrelims\NavtechDAL\RepositoryBase.cs
