@@ -9,13 +9,10 @@ using static Dapper.SqlMapper;
 namespace Repository
 {
     public class RepositoryBase
-    {
-        #region Fields
-        private readonly string connectionString;
-        #endregion
+    {        
 
         #region Properties
-        private string ConnectionString = "Data Source=Liquid;Initial Catalog=NavtechPrelims;Integrated Security=True";
+        private readonly string ConnectionString = "Data Source=Liquid;Initial Catalog=NavtechPrelims;Integrated Security=True";
         #endregion
 
         #region Query execution methods

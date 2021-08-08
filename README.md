@@ -30,3 +30,10 @@ Once it's is saved then fetch the configuration that is available in the databas
 System shall be able to perform bulk insert/update operations. If a field specific entry is available then update that entry
 otherwise insert.
 
+## DB Components
+- Table: NavtechPrelims\DBComponents\dbo\DDL\EntityConfiguration
+- Stored Procedure: NavtechPrelims\DBComponents\dbo\StoredProcedures\sp_db_entity_configuration
+- 
+## Connection String
+Connection string is available in the here,
+\NavtechPrelims\NavtechDAL\RepositoryBase.cs
